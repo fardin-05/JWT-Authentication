@@ -15,7 +15,7 @@ from .serializers import(
 
 User = get_user_model()
 
-# Register View 
+#================Register View================= 
 class RegisterView(APIView):
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -25,7 +25,7 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-#OTP Verify View
+#==================OTP Verify View=================
 class VerifyOtpView(APIView):
     def post(self, request):
         serializer = VerifyOtpSerializer(data=request.data)
@@ -45,7 +45,7 @@ class VerifyOtpView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 
-#Resend OTP View
+#======================Resend OTP View===================
 class ResendOtpView(APIView):
     def post(self, request):
         serializer = ResendOtpSerializer(data=request.data)
@@ -64,7 +64,7 @@ class ResendOtpView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
-#Login View
+#========================Login View==================
 class LoginView(APIView):
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
@@ -79,7 +79,7 @@ class LoginView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-#Forgot Password View
+#========================Forgot Password View==================
 class ForgotPasswordView(APIView):
     def post(self, request):
         serializer = ForgotPasswordSerializer(data=request.data)
@@ -96,7 +96,7 @@ class ForgotPasswordView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-#Change Password View
+#=======================Change Password View===================
 class ChangePasswordView(APIView):
     def post(self, request):
         serializer = ChangePasswordSerializer(data=request.data) 
@@ -118,7 +118,7 @@ class ChangePasswordView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-#Logout View
+#====================Logout View================================
 class LogoutView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 

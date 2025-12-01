@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 import random
-# Custom User Manager
+#=============Custom User Manager=================
 class UserManager (BaseUserManager):
     def create_user(self, email, full_name, password = None, **extra_fields):
         if not email:
@@ -24,7 +24,7 @@ class UserManager (BaseUserManager):
     
 
 
-#Custom User Model
+#================Custom User Model===============
 class UserModel(AbstractBaseUser, PermissionsMixin):
     ROLE_CHOICES = (
         ('user', 'User'),
